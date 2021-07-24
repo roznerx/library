@@ -1,0 +1,174 @@
+body {
+    background: #8bc8fe;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-family: "Lucida Sans Unicode" !important;
+    overflow: hidden;
+}
+
+
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px; 
+    background: #8bc8fe;
+    border-bottom: 5px solid #051b2c;
+    
+}
+
+h1 {
+    margin-left: 70px;
+    margin-top: 25px;
+    text-align: left;
+    font-family: "Lucida Sans Unicode";
+    color: #051b2c;
+    font-size: 100px;
+}
+
+#booklist {
+    margin-left: 50px;
+    overflow-y: scroll;
+    height: fixed;
+    margin-top: 200px;
+    height: 500px;
+    width: 500px;
+    border: 3px solid #051b2c;
+    scrollbar-color: #051b2c #8bc8fe;
+}
+
+ul {
+    margin: auto;
+    font-size: 20px;
+    border: 1px solid #051b2c;
+}
+
+#infocard {
+    display: flex;
+    height: 300px;
+    width: 800px;
+    background-color: #051b2c;
+    margin-left: 650px;
+    margin-top: -500px;
+    outline: 1px solid #8bc8fe;
+    outline-offset: -5px;
+}
+
+#bookgenreimage {
+    margin-left: 30px;
+    margin-top: 30px;
+    height: 200px;
+    width: 200px;
+    border: 3px solid #8bc8fe;
+    border-radius: 50%;
+    padding: 1em;
+}
+
+#title {
+    margin-left: 80px;
+    margin-top: 10px;
+    color: #8bc8fe;
+    font-size: 50px;
+}
+
+#author {
+    margin-left: -30px;
+    margin-top: 5px;
+    color: #8bc8fe;
+    font-size: 30px;
+}
+
+#authorname {
+    align: center;
+    margin-left: 110px;
+    margin-top: -40px;
+    color: #8bc8fe;
+    font-size: 25px;
+}
+
+#year {
+    margin-left: -30px;
+    margin-top: 5px;
+    color: #8bc8fe;
+    font-size: 30px;
+}
+
+#yearnumber {
+    align: center;
+    margin-left: 110px;
+    margin-top: -40px;
+    color: #8bc8fe;
+    font-size: 25px;
+}
+
+#pages {
+    margin-left: -30px;
+    margin-top: 5px;
+    color: #8bc8fe;
+    font-size: 30px;
+}
+
+#pagesnumber {
+    align: center;
+    margin-left: 110px;
+    margin-top: -40px;
+    color: #8bc8fe;
+    font-size: 25px;
+}
+
+#read {
+    margin-left: -30px;
+    margin-top: 5px;
+    color: #8bc8fe;
+    font-size: 30px;
+}
+
+#readstatus {
+    align: center;
+    margin-left: 110px;
+    margin-top: -40px;
+    color: #8bc8fe;
+    font-size: 25px;
+}
+
+#buttons {
+    display: inline-block;
+    flex-wrap: nowrap; 
+}
+
+#addbook {
+    margin-top: 350px;
+    margin-left: -580px;
+    color: #8bc8fe;
+    background-color: #051b2c;
+    padding: 25px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+#deletebook {
+    margin-top: 350px;
+    margin-left: 40px;
+    color: #8bc8fe;
+    background-color: #051b2c;
+    padding: 25px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    min-width: 200px;
+}
+
+#changestatus {
+    margin-top: 350px;
+    margin-left: 40px;
+    color: #8bc8fe;
+    background-color: #051b2c;
+    padding: 25px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    min-width: 200px;
+}
