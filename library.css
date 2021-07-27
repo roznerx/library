@@ -172,3 +172,57 @@ ul {
     font-size: 22px;
     min-width: 200px;
 }
+
+.popup-wrapper {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.popup {
+    font-family: "Lucida Sans Unicode";
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    background: #8bc8fe;
+    margin: 10% auto;
+    padding: 20px;
+    position: relative;
+}
+
+.popup a {
+    background: salmon;
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    margin: 30px auto;
+    display: block;
+    width: 50%;
+}
+
+.popup a:hover {
+    background: palevioletred;
+    transition: all 0.2s;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#submit {
+    font-family: "Lucida Sans Unicode";
+    color: #8bc8fe;
+    background-color: #051b2c;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
