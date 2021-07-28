@@ -1,4 +1,5 @@
 let myLibrary = [];
+let newBook = {};
 
 //Constructor
 
@@ -14,6 +15,16 @@ function Book(title, author, genre, year, pages, status) {
 const addBook = document.getElementById("addbook");
 const popup = document.querySelector(".popup-wrapper");
 const popupClose = document.querySelector(".popup-close");
+
+const changeStatusBtn = document.getElementById("changestatus");
+
+
+const bookGenreImage = document.getElementById("bookgenreimage");
+const title = document.getElementById("title");
+const authorName = document.getElementById("authorname");
+const yearNumber = document.getElementById("yearnumber");
+const pagesNumber = document.getElementById("pagesnumber");
+const readStatus = document.getElementById("readstatus");
 
 const newTitle = document.getElementById("newtitle");
 const newAuthor = document.getElementById("newauthor");
@@ -44,6 +55,7 @@ popup.addEventListener("click", event => {
 
 //Add book(s)
 
+
 submit.addEventListener("click", () => {
 
   popup.style.display = "none";
@@ -67,22 +79,67 @@ submit.addEventListener("click", () => {
     addStatus = statusNotRead.value;
   }
 
-  let newBook = new Book(newTitleValue, newAuthorValue, newGenreValue, newYearValue, newPagesValue, addStatus);
-  myLibrary.push(newBook);
-
   let ul = document.createElement("ul");
   ul.innerHTML = newTitleValue;
-  ul.setAttribute("type","button");
   ul.id = "listedBook";
   document.getElementById("booklist").appendChild(ul); 
+
+  newBook = new Book(newTitleValue, newAuthorValue, newGenreValue, newYearValue, newPagesValue, addStatus);
+  myLibrary.push(newBook);
+
+  
+
+
+});
+
+//EVENT DELEGATION
+
+document.body.addEventListener("click", function(event) {
+  if (event.target.id == "listedBook") {
+
+  for (let i = 0; i < myLibrary.length; i++) {
+
+    if (event.target.innerHTML == myLibrary[i].title) {
+      //bookGenreImage
+      title.innerHTML = myLibrary[i].title;
+      authorName.innerHTML = myLibrary[i].author;
+      yearNumber.innerHTML = myLibrary[i].year;
+      pagesNumber.innerHTML = myLibrary[i].pages;
+      readStatus.innerHTML = myLibrary[i].status;
+    }
+
+
+
+
+  }
+
+    
+  /*
+    title = "";
+    bookGenreImage = "";
+    authorName = "";
+    yearNumber = "";
+    pagesNumber = "";
+    readStatus = "";
+  */
+  }
+
+
 });
 
 
 
 
-  const listedBook = document.getElementById("listedBook");
-  listedBook.addEventListener("click", () => {
-  console.log("TESTOK");
-});
+
+
+
+
+
+
+
+
+
+
+
 
 

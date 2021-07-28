@@ -16,90 +16,125 @@
 
     <div id="booklist">
 
+        <ul id="listedBook">THE HOBBIT</ul>
+
+    </div>
+
+    <div id="generalinfosection">
+        
+        <div id="infocard">
+
+            <div id="genresection">
     
-
-    </div>
-
-    <div id="infocard">
-
-        <div id="bookgenreimage"></div>
-
-        <div id="title">THE HOBBIT</h1>
-        <div id="author">Author:</div>
-        <div id="authorname">J.R.R. Tolkien</div>
-        <div id="year">Year:</div>
-        <div id="yearnumber">1937</div>
-        <div id="pages">Pages:</div>
-        <div id="pagesnumber">304</div>
-        <div id="read">Read:</div>
-        <div id="readstatus">Not yet</div>
-
-    </div>
-
-    <div id="buttons">
-
-        <button type="button" id="addbook">ADD BOOK</button> 
-
-        <div class="popup-wrapper">
-            <div class="popup">
-                <div class="popup-close">x</div>
-                <div class="popup-content">
-                    <form>
-                        <label for="addtittle">Title:</label><br>
-                        <input type="text" id="newtitle" value=""><br><br>
-
-                        <label for="addauthor">Author:</label><br>
-                        <input type="text" id="newauthor" value=""><br><br>
-
-                        <label for="addgenre">Genre:</label><br>
-
-                        <select name="addgenre" id="newgenre" value="">
-
-                            <option id="adventure">Adventure</option>
-                            <option id="adult">Adult</option>
-                            <option id="art">Art</option>
-                            <option id="biography">Biography</option>
-                            <option id="children">Children</option>
-                            <option id="cooking">Cooking</option>
-                            <option id="fantasy">Fantasy</option>
-                            <option id="health">Health</option>
-                            <option id="historicalfiction">Historical Fiction</option>
-                            <option id="horror">Horror</option>
-                            <option id="romance">Romance</option>
-                            <option id="scifi">Science Fiction</option>
-                            <option id="selfhelp">Self-Help</option>
-                            <option id="mystery">Thriller</option>                            
-            
-                        </select><br><br>
-
-                        <label for="addyear">Year:</label><br>
-                        <input type="text" id="newyear" value=""><br><br>
-
-                        <label for="addpages">Pages:</label><br>
-                        <input type="text" id="newpages" value=""><br><br>
-
-                        <label for="addstatus" id="addstatus">Status:</label><br>
-
-                        <input type="checkbox" id="status1" name="status1" value="Read">
-                        <label for="status1">Read</label>
-                        <input type="checkbox" id="status2" name="status2" value="Not read">
-                        <label for="status2">Not read</label>
-                        <br><br>
-
-                        <button type="button" id="submit">Submit</button> 
-                    </form>
+                <div id="bookgenreimage"></div>
+    
+            </div>
+    
+            <div id="textsection">
+    
+                <div id="titlesection">
+    
+                    <div id="title">THE HOBBIT</h1>
+    
+                </div>
+    
+                <div id="infoanddata">
+    
+                    <div id="infosection">
+    
+                        <div id="author">Author:</div>
+                        
+                        <div id="year">Year:</div>
+                        
+                        <div id="pages">Pages:</div>
+                        
+                        <div id="read">Read:</div>
+                        
+        
+                    </div>
+        
+                    <div id="datasection">
+        
+                        <div id="authorname">J.R.R. Tolkien</div>
+                        <div id="yearnumber">1937</div>
+                        <div id="pagesnumber">304</div>
+                        <div id="readstatus">Not yet</div>
+        
+                    </div>
+    
+                </div>
+    
+            </div>       
+    
+        </div>
+    
+        <br>
+    
+        <div id="buttons">
+    
+            <button type="button" id="addbook">ADD BOOK</button> 
+    
+            <div class="popup-wrapper">
+                <div class="popup">
+                    <div class="popup-close">x</div>
+                    <div class="popup-content">
+                        <form>
+                            <label for="addtittle">Title:</label><br>
+                            <input type="text" id="newtitle" value=""><br><br>
+    
+                            <label for="addauthor">Author:</label><br>
+                            <input type="text" id="newauthor" value=""><br><br>
+    
+                            <label for="addgenre">Genre:</label><br>
+    
+                            <select name="addgenre" id="newgenre" value="">
+    
+                                <option id="adventure">Adventure</option>
+                                <option id="adult">Adult</option>
+                                <option id="art">Art</option>
+                                <option id="biography">Biography</option>
+                                <option id="children">Children</option>
+                                <option id="cooking">Cooking</option>
+                                <option id="fantasy">Fantasy</option>
+                                <option id="health">Health</option>
+                                <option id="historicalfiction">Historical Fiction</option>
+                                <option id="horror">Horror</option>
+                                <option id="romance">Romance</option>
+                                <option id="scifi">Science Fiction</option>
+                                <option id="selfhelp">Self-Help</option>
+                                <option id="mystery">Thriller</option>                            
+                
+                            </select><br><br>
+    
+                            <label for="addyear">Year:</label><br>
+                            <input type="text" id="newyear" value=""><br><br>
+    
+                            <label for="addpages">Pages:</label><br>
+                            <input type="text" id="newpages" value=""><br><br>
+    
+                            <label for="addstatus" id="addstatus">Status:</label><br>
+    
+                            <input type="checkbox" id="status1" name="status1" value="Read">
+                            <label for="status1">Read</label>
+                            <input type="checkbox" id="status2" name="status2" value="Not read">
+                            <label for="status2">Not read</label>
+                            <br><br>
+    
+                            <button type="button" id="submit">Submit</button> 
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        
+            
+            
         
     
-
-        <button type="button" id="deletebook">DELETE</button>
-
-
-
-        <button type="button" id="changestatus">CHANGE</button>  
+            <button type="button" id="deletebook">DELETE</button>
+    
+    
+    
+            <button type="button" id="changestatus">CHANGE</button>  
+    </div>
 
     
 

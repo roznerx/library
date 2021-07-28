@@ -4,6 +4,14 @@ body {
     padding-top: 30px;
     font-family: "Lucida Sans Unicode" !important;
     overflow: hidden;
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    justify-content: left;
+    align-items: stretch;
 }
 
 
@@ -37,12 +45,25 @@ h1 {
     width: 500px;
     border: 3px solid #051b2c;
     scrollbar-color: #051b2c #8bc8fe;
+
+    flex: none;
 }
 
 ul {
     margin: auto;
     font-size: 20px;
     border: 1px solid #051b2c;
+}
+
+ul {
+    cursor: pointer;
+}
+
+#generalinfosection {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 1000px;
 }
 
 #infocard {
@@ -56,9 +77,15 @@ ul {
     outline-offset: -5px;
 }
 
+#genresection {
+    display: flex;
+    height: 300px;
+    width: 300px;
+}
+
 #bookgenreimage {
-    margin-left: 30px;
-    margin-top: 30px;
+    margin: auto;
+    margin-left: 20px;
     height: 200px;
     width: 200px;
     border: 3px solid #8bc8fe;
@@ -66,76 +93,110 @@ ul {
     padding: 1em;
 }
 
+#textsection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    height: 300px;
+    width: 400px;
+}
+
+#titlesection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100px;
+}
+
 #title {
-    margin-left: 80px;
+    text-align: center;
     margin-top: 10px;
     color: #8bc8fe;
-    font-size: 50px;
+    font-size: 30px;
+}
+
+#infoanddata {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#infosection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 200px;
+    width: 200px;
 }
 
 #author {
-    margin-left: -30px;
+    margin: auto;
     margin-top: 5px;
     color: #8bc8fe;
     font-size: 30px;
-}
-
-#authorname {
-    align: center;
-    margin-left: 110px;
-    margin-top: -40px;
-    color: #8bc8fe;
-    font-size: 25px;
 }
 
 #year {
-    margin-left: -30px;
+    margin: auto;
     margin-top: 5px;
     color: #8bc8fe;
     font-size: 30px;
-}
-
-#yearnumber {
-    align: center;
-    margin-left: 110px;
-    margin-top: -40px;
-    color: #8bc8fe;
-    font-size: 25px;
 }
 
 #pages {
-    margin-left: -30px;
+    margin: auto;
     margin-top: 5px;
     color: #8bc8fe;
     font-size: 30px;
 }
 
-#pagesnumber {
-    align: center;
-    margin-left: 110px;
-    margin-top: -40px;
+#read {
+    margin: auto;
+    margin-top: 5px;
+    color: #8bc8fe;
+    font-size: 30px;
+}
+
+#datasection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 200px;
+    width: 200px;
+}
+
+#authorname {
+    margin-top: 10px;
+    width: 300px;
     color: #8bc8fe;
     font-size: 25px;
 }
 
-#read {
-    margin-left: -30px;
-    margin-top: 5px;
+#yearnumber {
+    margin-top: 15px;
     color: #8bc8fe;
-    font-size: 30px;
+    font-size: 25px;
+}
+
+#pagesnumber {
+    margin-top: 15px;
+    color: #8bc8fe;
+    font-size: 25px;
 }
 
 #readstatus {
-    align: center;
-    margin-left: 110px;
-    margin-top: -40px;
+    margin-top: 10px;
     color: #8bc8fe;
     font-size: 25px;
 }
 
 #buttons {
-    display: inline-block;
-    flex-wrap: nowrap; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    height: 200px;
+    width: 200px;
 }
 
 #addbook {
