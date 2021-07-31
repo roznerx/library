@@ -107,10 +107,11 @@ ul {
     flex-direction: column;
     flex-wrap: nowrap;
     height: 100px;
+    width: 600px;
 }
 
 #title {
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
     color: #8bc8fe;
     font-size: 30px;
@@ -201,7 +202,7 @@ ul {
 
 #addbook {
     margin-top: 350px;
-    margin-left: -580px;
+    margin-left: -610px;
     color: #8bc8fe;
     background-color: #051b2c;
     padding: 25px 40px;
