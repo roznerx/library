@@ -79,13 +79,18 @@
                     <div class="popup-close">x</div>
                     <div class="popup-content">
                         <form>
-                            <label for="addtittle">Title:</label><br>
-                            <input type="text" id="newtitle" value=""><br><br>
+                            <label for="addtittle">Title:</label>
+                            <br>
+                            <input type="text" id="newtitle" value="" maxLength="22">
+                            <br><br>
     
-                            <label for="addauthor">Author:</label><br>
-                            <input type="text" id="newauthor" value=""><br><br>
+                            <label for="addauthor">Author:</label>
+                            <br>
+                            <input type="text" id="newauthor" value="" maxLength="16">
+                            <br><br>
     
-                            <label for="addgenre">Genre:</label><br>
+                            <label for="addgenre">Genre:</label>
+                            <br>
     
                             <select name="addgenre" id="newgenre" value="">
     
@@ -104,19 +109,23 @@
                                 <option id="selfhelp">Self-Help</option>
                                 <option id="mystery">Thriller</option>                            
                 
-                            </select><br><br>
+                            </select>
+                            <br><br>
     
                             <label for="addyear">Year:</label><br>
-                            <input type="text" id="newyear" value=""><br><br>
+                            <input type="text" id="newyear" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <br><br>
     
                             <label for="addpages">Pages:</label><br>
-                            <input type="text" id="newpages" value=""><br><br>
+                            <input type="text" id="newpages" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <br><br>
     
-                            <label for="addstatus" id="addstatus">Status:</label><br>
+                            <label for="addstatus" id="addstatus">Status:</label>
+                            <br>
     
-                            <input type="checkbox" id="status1" name="status1" value="Read">
+                            <input type="radio" id="status1" name="status" value="Read">
                             <label for="status1">Read</label>
-                            <input type="checkbox" id="status2" name="status2" value="Not read">
+                            <input type="radio" id="status2" name="status" value="Not read">
                             <label for="status2">Not read</label>
                             <br><br>
     

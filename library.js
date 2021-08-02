@@ -16,8 +16,6 @@ function Book(title, author, genre, year, pages, status) {
 
 theHobbit = new Book("THE HOBBIT", "J.R.R. Tolkien", "Fantasy", "1937", "304", "Not read");
 myLibrary.push(theHobbit);
-//const displayBookTest = document.getElementById("displaybooktest");
-//displayBookTest.id = "listedBook";
 
 //Constants
 
@@ -69,17 +67,24 @@ popup.addEventListener("click", event => {
 
 submit.addEventListener("click", () => {
 
-  popup.style.display = "none";
-
   let newTitleValue = newTitle.value;
+  if (newTitleValue.length = 22) {
+    newTitleValue = newTitle.value + "...";
+  }
+
   let newAuthorValue = newAuthor.value;
+  if (newAuthorValue.length = 16) {
+    newAuthorValue = newAuthor.value + "...";
+  }
+
+
   let newGenreValue = newGenre.value;
 
   //MAKE CONDITION FOR GENRE PICTURES
 
   let newYearValue = newYear.value;
   let newPagesValue = newPages.value;
-  
+    
   let addStatus = "";
   if (statusRead.checked) {
     addStatus = statusRead.value;
@@ -87,13 +92,18 @@ submit.addEventListener("click", () => {
     addStatus = statusNotRead.value;
   }
 
-  let ul = document.createElement("ul");
-  ul.innerHTML = newTitleValue;
-  ul.id = newTitleValue;
-  ul.className = "listedBook";
-  document.getElementById("booklist").appendChild(ul); 
-  newBook = new Book(newTitleValue, newAuthorValue, newGenreValue, newYearValue, newPagesValue, addStatus);
-  myLibrary.push(newBook);
+  if (newTitleValue == "" || newAuthorValue == "" || newGenreValue == "" || newYearValue == "" || newPagesValue == "" || addStatus == "") {
+    alert("You must complete all fields in order to add a new book");
+  } else {
+    let ul = document.createElement("ul");
+    ul.innerHTML = newTitleValue;
+    ul.id = newTitleValue;
+    ul.className = "listedBook";
+    document.getElementById("booklist").appendChild(ul); 
+    newBook = new Book(newTitleValue, newAuthorValue, newGenreValue, newYearValue, newPagesValue, addStatus);
+    myLibrary.push(newBook);
+    popup.style.display = "none";
+  }  
 });
 
 //EVENT DELEGATION
@@ -149,19 +159,15 @@ changeStatusBtn.addEventListener("click", () => {
   
   for (let i = 0; i < myLibrary.length; i++) {
 
-  if (readStatus.innerHTML == myLibrary[i].status) {
+  if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Read") {
+    readStatus.innerHTML = "Not read";
+  } else if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Not read") {
+    readStatus.innerHTML = "Read";
+  } 
 
-    if (myLibrary[i].status == "Read") {
-      myLibrary[i].status == "Not read";
-    } else if (myLibrary[i].status == "Not read") {
-      myLibrary[i].status == "Read";
-    }
-  }
-
-    
+  myLibrary[i].status = readStatus.innerHTML;
 
   }
-
 });
 
 
