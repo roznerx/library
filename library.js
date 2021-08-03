@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary;
 let newBook = {};
 
 //Constructor
@@ -12,18 +12,13 @@ function Book(title, author, genre, year, pages, status) {
   this.status = status;
 }
 
-//Display book
-
-theHobbit = new Book("THE HOBBIT", "J.R.R. Tolkien", "Fantasy", "1937", "304", "Not read");
-myLibrary.push(theHobbit);
-
 //Constants
 
 const addBook = document.getElementById("addbook");
 const popup = document.querySelector(".popup-wrapper");
 const popupClose = document.querySelector(".popup-close");
-
 const bookList = document.getElementById("booklist");
+
 let listedBook = document.getElementsByClassName("listedBook");
 let bookListFull = document.getElementById("booklist").children;
 
@@ -33,7 +28,6 @@ const authorName = document.getElementById("authorname");
 const yearNumber = document.getElementById("yearnumber");
 const pagesNumber = document.getElementById("pagesnumber");
 const readStatus = document.getElementById("readstatus");
-
 const newTitle = document.getElementById("newtitle");
 const newAuthor = document.getElementById("newauthor");
 const newGenre = document.getElementById("newgenre");
@@ -47,6 +41,73 @@ const deleteBook = document.getElementById("deletebook");
 const changeStatusBtn = document.getElementById("changestatus");
 
 const img = document.getElementById("img");
+
+//Local Storage
+
+if (localStorage.length !== 0) {
+
+  myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+  title.innerHTML = myLibrary[0].title;
+  authorName.innerHTML = myLibrary[0].author;
+  yearNumber.innerHTML = myLibrary[0].year;
+  pagesNumber.innerHTML = myLibrary[0].pages;
+  readStatus.innerHTML = myLibrary[0].status; 
+
+  if (myLibrary[0].genre == "Adult") {
+    img.src = "genre_img/ADULT.png";
+  } else if (myLibrary[0].genre == "Adventure") {
+    img.src = "genre_img/ADVENTURE.png";
+  } else if (myLibrary[0].genre == "Art") {
+    img.src = "genre_img/ART.png";
+  } else if (myLibrary[0].genre == "Biography") {
+    img.src = "genre_img/BIOGRAPHY.png";
+  } else if (myLibrary[0].genre == "Children") {
+    img.src = "genre_img/CHILDREN.png";
+  } else if (myLibrary[0].genre == "Cooking") {
+    img.src = "genre_img/COOKING.png";
+  } else if (myLibrary[0].genre == "Fantasy") {
+    img.src = "genre_img/FANTASY.png";
+  } else if (myLibrary[0].genre == "Health") {
+    img.src = "genre_img/HEALTH.png";
+  } else if (myLibrary[0].genre == "Historical Fiction") {
+    img.src = "genre_img/HISTORICALFICTION.png";
+  } else if (myLibrary[0].genre == "Horror") {
+    img.src = "genre_img/HORROR.png";
+  } else if (myLibrary[0].genre == "Romance") {
+    img.src = "genre_img/ROMANCE.png";
+  } else if (myLibrary[0].genre == "Science Fiction") {
+    img.src = "genre_img/SCIENCEFICTION.png";
+  } else if (myLibrary[0].genre == "Self-Help") {
+    img.src = "genre_img/SELFHELP.png";
+  } else if (myLibrary[0].genre == "Thriller") {
+    img.src = "genre_img/THRILLER.png";
+  }
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    let ul = document.createElement("ul");
+    ul.innerHTML = myLibrary[i].title;
+    ul.id = myLibrary[i].title;
+    ul.className = "listedBook";
+    document.getElementById("booklist").appendChild(ul);
+  } 
+
+} else if (localStorage.length === 0) {
+
+  myLibrary = [];
+  theHobbit = new Book("THE HOBBIT", "J.R.R. Tolkien", "Fantasy", "1937", "304", "Not read");
+  let ul = document.createElement("ul");
+  ul.innerHTML = theHobbit.title;
+  ul.id = theHobbit.title;
+  ul.className = "listedBook";
+  document.getElementById("booklist").appendChild(ul);
+  myLibrary.push(theHobbit);
+  title.innerHTML = theHobbit.title;
+  authorName.innerHTML = theHobbit.author;
+  yearNumber.innerHTML = theHobbit.year;
+  pagesNumber.innerHTML = theHobbit.pages;
+  readStatus.innerHTML = theHobbit.status;
+  img.src = "genre_img/FANTASY.png";
+};
 
 //Popup
 
@@ -74,15 +135,13 @@ submit.addEventListener("click", () => {
   }
 
   let newAuthorValue = newAuthor.value;
-  if (newAuthorValue.length > 16) {
+  if (newAuthorValue.length > 18) {
     newAuthorValue = newAuthor.value + "...";
   }
 
   let newGenreValue = newGenre.value;
-  
   let newYearValue = newYear.value;
   let newPagesValue = newPages.value;
-    
   let addStatus = "";
   if (statusRead.checked) {
     addStatus = statusRead.value;
@@ -100,6 +159,7 @@ submit.addEventListener("click", () => {
     document.getElementById("booklist").appendChild(ul); 
     newBook = new Book(newTitleValue, newAuthorValue, newGenreValue, newYearValue, newPagesValue, addStatus);
     myLibrary.push(newBook);
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     popup.style.display = "none";
   }  
 });
@@ -107,9 +167,13 @@ submit.addEventListener("click", () => {
 //EVENT DELEGATION
 
 document.body.addEventListener("click", function(event) {
+
   if (event.target.className == "listedBook") {
+
     for (let i = 0; i < myLibrary.length; i++) {
+
       if (event.target.innerHTML == myLibrary[i].title) {
+
         title.innerHTML = myLibrary[i].title;
         authorName.innerHTML = myLibrary[i].author;
         yearNumber.innerHTML = myLibrary[i].year;
@@ -144,11 +208,10 @@ document.body.addEventListener("click", function(event) {
           img.src = "genre_img/SELFHELP.png";
         } else if (myLibrary[i].genre == "Thriller") {
           img.src = "genre_img/THRILLER.png";
+        }
       }
-
     }
   }
-}
 });
 
 //Delete book(s)
@@ -156,15 +219,19 @@ document.body.addEventListener("click", function(event) {
 deleteBook.addEventListener("click", () => {
 
   for (let i = 0; i < myLibrary.length; i++) {
+
     if (myLibrary[i].title == title.innerHTML) {
+
     for (let j = 0; j < bookListFull.length; j++) {
+
       if (title.innerHTML == bookListFull[j].innerHTML) {
         listedBook[j].remove();
       }
     }
     myLibrary.splice(i, 1);
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+
     if (myLibrary.length >= 2) {
-      //bookGenreImage
       title.innerHTML = myLibrary[i-1].title;
       authorName.innerHTML = myLibrary[i-1].author;
       yearNumber.innerHTML = myLibrary[i-1].year;
@@ -178,7 +245,6 @@ deleteBook.addEventListener("click", () => {
         pagesNumber.innerHTML = "";
         readStatus.innerHTML = "";
         img.src = "";
-
       }    
     }
   }
@@ -187,16 +253,14 @@ deleteBook.addEventListener("click", () => {
 //Change status
 
 changeStatusBtn.addEventListener("click", () => {
-  
+
   for (let i = 0; i < myLibrary.length; i++) {
 
-  if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Read") {
-    readStatus.innerHTML = "Not read";
-  } else if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Not read") {
-    readStatus.innerHTML = "Read";
-  } 
-
-  myLibrary[i].status = readStatus.innerHTML;
-
+    if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Read") {
+      readStatus.innerHTML = "Not read";
+    } else if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Not read") {
+      readStatus.innerHTML = "Read";
+    } 
+    myLibrary[i].status = readStatus.innerHTML;
   }
 });

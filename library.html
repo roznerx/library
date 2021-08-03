@@ -9,75 +9,41 @@
     <script type="text/javascript" src="library.js" async></script>
 </head>
 <body>
-
     <div class="header">
         <h1>LIBRARY</h1>
     </div> 
-
     <div id="booklist">
-
-        <ul id="THE HOBBIT" class="listedBook">THE HOBBIT</ul>
-
     </div>
-
     <div id="generalinfosection">
-        
         <div id="infocard">
-
             <div id="genresection">
-    
                 <div id="bookgenreimage">
-
-                    <img id="img" src="genre_img/FANTASY.png " />
-                    
+                    <img id="img" src="genre_img/FANTASY.png " />         
                 </div>
-    
             </div>
-    
             <div id="textsection">
-    
                 <div id="titlesection">
-    
-                    <div id="title">THE HOBBIT</h1>
-    
+                    <div id="title"></h1>
                 </div>
-    
                 <div id="infoanddata">
-    
                     <div id="infosection">
-    
-                        <div id="author">Author:</div>
-                        
+                        <div id="author">Author:</div>  
                         <div id="year">Year:</div>
-                        
-                        <div id="pages">Pages:</div>
-                        
-                        <div id="read">Status:</div>
-                        
-        
-                    </div>
-        
-                    <div id="datasection">
-        
-                        <div id="authorname">J.R.R. Tolkien</div>
-                        <div id="yearnumber">1937</div>
-                        <div id="pagesnumber">304</div>
-                        <div id="readstatus">Not read</div>
-        
-                    </div>
-    
-                </div>
-    
-            </div>       
-    
-        </div>
-    
-        <br>
-    
-        <div id="buttons">
-    
-            <button type="button" id="addbook">ADD BOOK</button> 
-    
+                        <div id="pages">Pages:</div>                        
+                        <div id="read">Status:</div>               
+                    </div>        
+                    <div id="datasection">        
+                        <div id="authorname"></div>
+                        <div id="yearnumber"></div>
+                        <div id="pagesnumber"></div>
+                        <div id="readstatus"></div>        
+                    </div>    
+                </div>    
+            </div>           
+        </div>    
+        <br>    
+        <div id="buttons">    
+            <button type="button" id="addbook">ADD BOOK</button>     
             <div class="popup-wrapper">
                 <div class="popup">
                     <div class="popup-close">x</div>
@@ -85,19 +51,15 @@
                         <form>
                             <label for="addtittle">Title:</label>
                             <br>
-                            <input type="text" id="newtitle" value="" maxLength="22">
-                            <br><br>
-    
+                            <input type="text" id="newtitle" value="" maxlength="26">
+                            <br><br>    
                             <label for="addauthor">Author:</label>
                             <br>
-                            <input type="text" id="newauthor" value="" maxLength="16">
-                            <br><br>
-    
+                            <input type="text" id="newauthor" value="" maxlength="22">
+                            <br><br>    
                             <label for="addgenre">Genre:</label>
-                            <br>
-    
+                            <br>    
                             <select name="addgenre" id="newgenre" value="">
-
                                 <option id="adult">Adult</option>
                                 <option id="adventure">Adventure</option>
                                 <option id="art">Art</option>
@@ -111,46 +73,29 @@
                                 <option id="romance">Romance</option>
                                 <option id="scifi">Science Fiction</option>
                                 <option id="selfhelp">Self-Help</option>
-                                <option id="mystery">Thriller</option>                            
-                
+                                <option id="mystery">Thriller</option>
                             </select>
-                            <br><br>
-    
+                            <br><br>    
                             <label for="addyear">Year:</label><br>
                             <input type="text" id="newyear" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                            <br><br>
-    
+                            <br><br>    
                             <label for="addpages">Pages:</label><br>
                             <input type="text" id="newpages" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                            <br><br>
-    
+                            <br><br>    
                             <label for="addstatus" id="addstatus">Status:</label>
-                            <br>
-    
+                            <br>    
                             <input type="radio" id="status1" name="status" value="Read">
                             <label for="status1">Read</label>
                             <input type="radio" id="status2" name="status" value="Not read">
                             <label for="status2">Not read</label>
-                            <br><br>
-    
+                            <br><br>    
                             <button type="button" id="submit">Submit</button> 
                         </form>
                     </div>
                 </div>
             </div>
-            
-            
-        
-    
             <button type="button" id="deletebook">DELETE</button>
-    
-    
-    
             <button type="button" id="changestatus">CHANGE STATUS</button>  
     </div>
-
-    
-
-
 </body>
 </html>
