@@ -46,6 +46,7 @@ const submit = document.getElementById("submit");
 const deleteBook = document.getElementById("deletebook");
 const changeStatusBtn = document.getElementById("changestatus");
 
+const img = document.getElementById("img");
 
 //Popup
 
@@ -68,20 +69,17 @@ popup.addEventListener("click", event => {
 submit.addEventListener("click", () => {
 
   let newTitleValue = newTitle.value;
-  if (newTitleValue.length = 22) {
+  if (newTitleValue.length > 22) {
     newTitleValue = newTitle.value + "...";
   }
 
   let newAuthorValue = newAuthor.value;
-  if (newAuthorValue.length = 16) {
+  if (newAuthorValue.length > 16) {
     newAuthorValue = newAuthor.value + "...";
   }
 
-
   let newGenreValue = newGenre.value;
-
-  //MAKE CONDITION FOR GENRE PICTURES
-
+  
   let newYearValue = newYear.value;
   let newPagesValue = newPages.value;
     
@@ -112,15 +110,45 @@ document.body.addEventListener("click", function(event) {
   if (event.target.className == "listedBook") {
     for (let i = 0; i < myLibrary.length; i++) {
       if (event.target.innerHTML == myLibrary[i].title) {
-        //bookGenreImage
         title.innerHTML = myLibrary[i].title;
         authorName.innerHTML = myLibrary[i].author;
         yearNumber.innerHTML = myLibrary[i].year;
         pagesNumber.innerHTML = myLibrary[i].pages;
         readStatus.innerHTML = myLibrary[i].status;
+
+        if (myLibrary[i].genre == "Adult") {
+          img.src = "genre_img/ADULT.png";
+        } else if (myLibrary[i].genre == "Adventure") {
+          img.src = "genre_img/ADVENTURE.png";
+        } else if (myLibrary[i].genre == "Art") {
+          img.src = "genre_img/ART.png";
+        } else if (myLibrary[i].genre == "Biography") {
+          img.src = "genre_img/BIOGRAPHY.png";
+        } else if (myLibrary[i].genre == "Children") {
+          img.src = "genre_img/CHILDREN.png";
+        } else if (myLibrary[i].genre == "Cooking") {
+          img.src = "genre_img/COOKING.png";
+        } else if (myLibrary[i].genre == "Fantasy") {
+          img.src = "genre_img/FANTASY.png";
+        } else if (myLibrary[i].genre == "Health") {
+          img.src = "genre_img/HEALTH.png";
+        } else if (myLibrary[i].genre == "Historical Fiction") {
+          img.src = "genre_img/HISTORICALFICTION.png";
+        } else if (myLibrary[i].genre == "Horror") {
+          img.src = "genre_img/HORROR.png";
+        } else if (myLibrary[i].genre == "Romance") {
+          img.src = "genre_img/ROMANCE.png";
+        } else if (myLibrary[i].genre == "Science Fiction") {
+          img.src = "genre_img/SCIENCEFICTION.png";
+        } else if (myLibrary[i].genre == "Self-Help") {
+          img.src = "genre_img/SELFHELP.png";
+        } else if (myLibrary[i].genre == "Thriller") {
+          img.src = "genre_img/THRILLER.png";
       }
+
     }
   }
+}
 });
 
 //Delete book(s)
@@ -142,12 +170,15 @@ deleteBook.addEventListener("click", () => {
       yearNumber.innerHTML = myLibrary[i-1].year;
       pagesNumber.innerHTML = myLibrary[i-1].pages;
       readStatus.innerHTML = myLibrary[i-1].status;
+      img.src = myLibrary[i-1].genre;
     } else {
         title.innerHTML = "";
         authorName.innerHTML = "";
         yearNumber.innerHTML = "";
         pagesNumber.innerHTML = "";
         readStatus.innerHTML = "";
+        img.src = "";
+
       }    
     }
   }
@@ -169,16 +200,3 @@ changeStatusBtn.addEventListener("click", () => {
 
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
