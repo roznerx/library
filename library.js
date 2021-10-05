@@ -1,15 +1,16 @@
 let myLibrary;
 let newBook = {};
 
-//Constructor
-
-function Book(title, author, genre, year, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.genre = genre;
-  this.year = year;
-  this.pages = pages;
-  this.status = status;
+//Class declaration
+class Book {
+  constructor(title, author, genre, year, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.genre = genre;
+    this.year = year;
+    this.pages = pages;
+    this.status = status;
+  }
 }
 
 //Constants
@@ -114,11 +115,9 @@ if (localStorage.length !== 0) {
 addBook.addEventListener("click", () => {
     popup.style.display = "block";
 });
-
 popupClose.addEventListener("click", () => {
   popup.style.display = "none";
 });
-
 popup.addEventListener("click", event => {
   if(event.target.className === "popup-wrapper") {
       popup.style.display = "none";
@@ -169,11 +168,8 @@ submit.addEventListener("click", () => {
 document.body.addEventListener("click", function(event) {
 
   if (event.target.className == "listedBook") {
-
     for (let i = 0; i < myLibrary.length; i++) {
-
       if (event.target.innerHTML == myLibrary[i].title) {
-
         title.innerHTML = myLibrary[i].title;
         authorName.innerHTML = myLibrary[i].author;
         yearNumber.innerHTML = myLibrary[i].year;
@@ -217,20 +213,15 @@ document.body.addEventListener("click", function(event) {
 //Delete book(s)
 
 deleteBook.addEventListener("click", () => {
-
   for (let i = 0; i < myLibrary.length; i++) {
-
     if (myLibrary[i].title == title.innerHTML) {
-
     for (let j = 0; j < bookListFull.length; j++) {
-
       if (title.innerHTML == bookListFull[j].innerHTML) {
         listedBook[j].remove();
       }
     }
     myLibrary.splice(i, 1);
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
-
     if (myLibrary.length >= 2) {
       title.innerHTML = myLibrary[i-1].title;
       authorName.innerHTML = myLibrary[i-1].author;
@@ -253,9 +244,7 @@ deleteBook.addEventListener("click", () => {
 //Change status
 
 changeStatusBtn.addEventListener("click", () => {
-
   for (let i = 0; i < myLibrary.length; i++) {
-
     if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Read") {
       readStatus.innerHTML = "Not read";
     } else if (readStatus.innerHTML == myLibrary[i].status && myLibrary[i].status == "Not read") {
