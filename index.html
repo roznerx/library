@@ -51,11 +51,11 @@
                         <form>
                             <label for="addtittle">Title:</label>
                             <br>
-                            <input type="text" id="newtitle" value="" maxlength="26">
+                            <input type="text" id="newtitle" value="" name="title" minlength="4" maxlength="26" required>
                             <br><br>    
                             <label for="addauthor">Author:</label>
                             <br>
-                            <input type="text" id="newauthor" value="" maxlength="22">
+                            <input type="text" id="newauthor" value="" name="author" minlength="4" maxlength="22" required>
                             <br><br>    
                             <label for="addgenre">Genre:</label>
                             <br>    
@@ -77,10 +77,10 @@
                             </select>
                             <br><br>    
                             <label for="addyear">Year:</label><br>
-                            <input type="text" id="newyear" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <input type="text" id="newyear" name="year" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required minlength="1" maxlength="4">
                             <br><br>    
                             <label for="addpages">Pages:</label><br>
-                            <input type="text" id="newpages" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                            <input type="text" id="newpages" name="pages" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required minlength="1" maxlength="10">
                             <br><br>    
                             <label for="addstatus" id="addstatus">Status:</label>
                             <br>    

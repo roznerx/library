@@ -253,3 +253,62 @@ changeStatusBtn.addEventListener("click", () => {
     myLibrary[i].status = readStatus.innerHTML;
   }
 });
+
+// Validations
+
+const titleInput = document.getElementById('newtitle');
+const authorInput = document.getElementById('newauthor')
+const yearInput = document.getElementById('newyear');
+const pagesInput = document.getElementById('newpages');
+
+titleInput.addEventListener('input', () => {
+  titleInput.setCustomValidity('');
+  titleInput.checkValidity();
+});
+
+titleInput.addEventListener('invalid', () => {
+  if(titleInput.value === '') {
+    titleInput.setCustomValidity(`Enter the book's title`);
+  } else {
+    titleInput.setCustomValidity('Title should be longer than 4 characters and 26 characters max');
+  }
+});
+
+authorInput.addEventListener('input', () => {
+  authorInput.setCustomValidity('');
+  authorInput.checkValidity();
+});
+
+authorInput.addEventListener('invalid', () => {
+  if(authorInput.value === '') {
+    authorInput.setCustomValidity(`Enter the book's author`);
+  } else {
+    authorInput.setCustomValidity(`Author's name should be longer than 4 characters and 26 characters max`);
+  }
+});
+
+yearInput.addEventListener('input', () => {
+  yearInput.setCustomValidity('');
+  yearInput.checkValidity();
+});
+
+yearInput.addEventListener('invalid', () => {
+  if(yearInput.value === '') {
+    yearInput.setCustomValidity(`Enter the book's release year`);
+  } else {
+    yearInput.setCustomValidity(`Release year should be 4 characters max`);
+  }
+});
+
+pagesInput.addEventListener('input', () => {
+  pagesInput.setCustomValidity('');
+  pagesInput.checkValidity();
+});
+
+pagesInput.addEventListener('invalid', () => {
+  if(yeapagesInputrInput.value === '') {
+    pagesInput.setCustomValidity(`Enter the book's number of pages`);
+  } else {
+    pagesInput.setCustomValidity(`Number of pages should be 10 characters max`);
+  }
+});
